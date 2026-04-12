@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/blog/about/</loc>
+    <lastmod>2026-04-12T18:18:23+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2026-04-12T18:18:23+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/posts/hello/</loc>
+    <lastmod>2026-04-12T18:18:09+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tags/hugo/</loc>
+    <lastmod>2026-04-12T18:18:09+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/posts/</loc>
+    <lastmod>2026-04-12T18:18:09+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tags/</loc>
+    <lastmod>2026-04-12T18:18:09+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2026-04-12T18:18:09+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/categories/</loc>
+  </url>
+</urlset>

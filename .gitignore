@@ -1,0 +1,20 @@
+# Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary
+*.log
+*.tmp
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
