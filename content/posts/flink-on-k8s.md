@@ -35,7 +35,7 @@ K8s 并不预先为应用划分"资源池"，而是采用 **声明式 + 按需�
 
 ### 1.4 扩展资源（Extended Resources）
 
-K8s 天然支持 CPU 和 Memory，对于 GPU 等特殊硬件，通过 **Extended Resources** 机制支持：
+K8s 天然支持 CPU 和 Memory，对于 GPU 等特殊硬件，通过 **[Extended Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/)** 机制支持：
 
 ```yaml
 resources:
@@ -45,7 +45,7 @@ resources:
     nvidia.com/gpu: 1
 ```
 
-设备插件（Device Plugin）向 kubelet 注册可用的 GPU 数量，Scheduler 在调度时自动匹配有 GPU 的 Node。
+设备插件（Device Plugin）向 kubelet 注册可用的 GPU 数量，Scheduler 在调度时自动匹配有 GPU 的 Node。关于 Flink 如何利用 K8s 的 Extended Resources 机制实现 GPU 调度与隔离，详见本系列的第二篇：[深入理解 Flink on Kubernetes（二）：GPU 加速从原理到实战](flink-on-k8s-gpu.md)。
 
 ---
 
@@ -407,9 +407,10 @@ Flink on Kubernetes 的 Native 集成是一个精心设计的架构：
 
 4. **优雅的装饰器模式**：Pod Spec 通过 `InitDecorator → SecretDecorator → CmdDecorator → ConfDecorator` 等一系列装饰器逐步构建，每个装饰器职责单一，易于扩展。
 
-如果你想要进一步学习 K8s Scheduler 的调度代码，可以直接阅读 Kubernetes 源码仓库 `pkg/scheduler/` 目录，尤其是 `framework/plugins/noderesources` 插件，它负责根据资源 requests/limits 进行 Node 筛选。
+如果你想要进一步学习 K8s Scheduler 的调度代码，可以直接阅读 Kubernetes 源码仓库 `pkg/scheduler/` 目录，尤其是 `framework/plugins/noderesources` 插件，它负责根据资源 requests/limits 进行 Node 筛选。关于 GPU 加速和细粒度资源管理的深入分析，请继续阅读本系列的[第二篇：GPU 加速](flink-on-k8s-gpu.md)和[第三篇：细粒度资源管理](flink-on-k8s-fine-grained.md)。
 
 > **参考资料**
 > - [How to natively deploy Flink on Kubernetes with HA](https://flink.apache.org/2021/02/10/how-to-natively-deploy-flink-on-kubernetes-with-high-availability-ha/)
 > - [Apache Flink 进阶（四）：Flink on Yarn/K8s 原理剖析及实践](https://tianchi.aliyun.com/forum/post/78949)
 > - Flink 源码 `flink-kubernetes` 模块
+> - [k8s device-plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/)
