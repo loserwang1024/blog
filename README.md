@@ -12,11 +12,9 @@
 
 ```bash
 
-# 启动开发服务器（包含草稿文章）
-hugo server -D
-
-# 或者绑定到所有网络接口（方便局域网访问）
-hugo server -D --bind 0.0.0.0 --port 1313
+$ git submodule update --init --recursive
+$ docker pull jakejarvis/hugo-extended:latest
+$ docker run -v $(pwd):/src -p 1313:1313 jakejarvis/hugo-extended:latest server --buildDrafts --buildFuture --bind 0.0.0.0
 ```
 
 启动后访问 http://localhost:1313/blog/
