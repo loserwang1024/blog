@@ -1,3 +1,11 @@
+---
+title: "Kubernetes Operator 学习指南"
+date: 2026-05-14
+draft: false
+tags: ["Kubernetes", "Operator", "CRD"]
+categories: ["Kubernetes"]
+---
+
 ## Kubernetes Operator 学习指南
 
 ### 一、什么是 Kubernetes Operator？

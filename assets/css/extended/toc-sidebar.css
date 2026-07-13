@@ -1,0 +1,65 @@
+/* === TOC 右侧侧边栏布局 === */
+.post-content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.post-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.post-toc {
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.post-toc .toc {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+/* TOC 滚动条样式 */
+.post-toc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.post-toc::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.post-toc::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* === 响应式：小屏幕 TOC 回到上方 === */
+@media (max-width: 1024px) {
+  .post-content-wrapper {
+    flex-direction: column;
+  }
+
+  .post-toc {
+    width: 100%;
+    position: relative;
+    top: 0;
+    max-height: none;
+    order: -1;
+  }
+}
+
+/* === Mermaid 图表样式 === */
+.mermaid {
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  overflow-x: auto;
+}
